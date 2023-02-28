@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--@author Hung-Nghi D. Vu-->
-<!--@version 2/26/2023-->
+<!--@version 2/27/2023-->
 <!--@description activity_main.xml file to create 17 buttons (4 buttons in 4 table rows within a table layout and one other button)-->
+<!--@enhancement added 63 more buttons and a seekbar-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,6 +21,25 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:text="RESET" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:progress="0"
+            android:min="4"
+            android:max="9"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Puzzle Size (Maximum 9x9, Minimum 4x4)" />
+
+
     </LinearLayout>
 
     <TableLayout
@@ -63,6 +83,44 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:clickable="false"/>
+
+            <Button
+                android:id="@+id/button0_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button0_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button0_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button0_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button0_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
         </TableRow>
 
         <TableRow
@@ -96,6 +154,41 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:clickable="false"/>
+            <Button
+                android:id="@+id/button1_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button1_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button1_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button1_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button1_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
         </TableRow>
 
         <TableRow
@@ -129,6 +222,42 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:clickable="false"/>
+
+            <Button
+                android:id="@+id/button2_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button2_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button2_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button2_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button2_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
         </TableRow>
 
         <TableRow
@@ -162,6 +291,427 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:clickable="false"/>
+
+            <Button
+                android:id="@+id/button3_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button3_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button3_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button3_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button3_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/button4_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button4_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button4_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button4_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button4_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button4_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button4_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button4_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button4_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/button5_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button5_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button5_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button5_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button5_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button5_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button5_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button5_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button5_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/button6_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button6_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button6_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button6_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button6_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button6_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button6_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button6_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button6_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/button7_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button7_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button7_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button7_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button7_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button7_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button7_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button7_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button7_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/button8_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button8_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button8_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/button8_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button8_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button8_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button8_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button8_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button8_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:visibility="gone" />
         </TableRow>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

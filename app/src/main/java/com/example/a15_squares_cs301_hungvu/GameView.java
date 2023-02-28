@@ -1,12 +1,15 @@
 /*@author Hung-Nghi D. Vu*/
-/*@version 2/26/2023*/
+/*@version 2/27/2023*/
 /*@description GameView.java class to display the attributes of views (buttons)*/
+/*@enhancement Updated most methods to fit with getting the current size of the board using
+* getRowSize and getColSize. Added a changeSize function to change the size of the board*/
 package com.example.a15_squares_cs301_hungvu;
 
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 import android.widget.Button;
+
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,10 +18,13 @@ public class GameView {
     private Button[][] buttons; //The board
     private GameModel gameModel;
     private Button resetButton;
+
+
+
     Random rng = new Random();
     public GameView(GameModel m){
         gameModel = m;
-        buttons = new Button[4][4];
+        buttons = new Button[9][9];
     }
 
     //Function to add button to the board
@@ -31,6 +37,7 @@ public class GameView {
         resetButton = b;
     }
 
+
     /*Shuffles the board (buttons[][]) by first clearing all text of the buttons, have the
     new blank button be randomly assigned, then randomly assign numbers 1-15 to 15 of the
     other 16 buttons of the board*/
@@ -38,9 +45,9 @@ public class GameView {
         gameModel.randomBlankSpace(); // Gives the [row][col] of the blank button random
 
         //Go through the whole board (buttons[][])
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < gameModel.getRowSize(); i++)
         {
-            for(int j = 0; j < 4; j++)
+            for(int j = 0; j < gameModel.getColSize(); j++)
             {
                 buttons[i][j].setText(""); //Clear the buttons' text
             }
@@ -49,13 +56,14 @@ public class GameView {
         ArrayList<Integer> nums = new ArrayList<>(); //ArrayList to keep track of current numbers used
         int k;
         //Go through whole array
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < gameModel.getRowSize(); i++) {
+            for (int j = 0; j < gameModel.getColSize(); j++) {
                 //Code only executes if the [row][col] is not the one of the blank button
                 if (!(gameModel.getColBlank() == j && gameModel.getRowBlank() == i)) {
-                    k = rng.nextInt(15)+1; //Random number 1-15
+                    int numbersReq = (gameModel.getRowSize()* gameModel.getColSize())-1;
+                    k = rng.nextInt(numbersReq)+1; //Random number 1-15
                     while(nums.contains(k)){ //Until the number is one that hasn't been used...
-                        k = rng.nextInt(15)+1; //Create another random number 1-15
+                        k = rng.nextInt(numbersReq)+1; //Create another random number 1-15
                     }
                     nums.add(k); //Add the new number to the list
                     buttons[i][j].setText(Integer.toString(k)); //Set the text to the current button to this random number
@@ -68,29 +76,31 @@ public class GameView {
     //Updates the board with valid moves (sets only buttons adjacent to the blank button as clickable
     //Also changes background of the buttons of the board that are in the correct place
     public void updateBoard(){
-        for(int i = 0; i < 4; i++){
-            for(int j = 0; j < 4; j++){
+        for(int i = 0; i < gameModel.getRowSize(); i++){
+            for(int j = 0; j < gameModel.getColSize(); j++){
                 buttons[i][j].setClickable(false); //Set all buttons on the board to not clickable
             }
         }
+
+
         //Sets the button above, below, left, and right to the blank one to clickable
         //if the button is within the board's bounds
         if(gameModel.rowBlank-1 != -1){
             buttons[gameModel.rowBlank-1][gameModel.colBlank].setClickable(true);
         }
-        if(gameModel.rowBlank+1 != 4){
-            buttons[gameModel.rowBlank+1][gameModel.colBlank].setClickable(true);
-        }
         if(gameModel.colBlank-1 != -1){
             buttons[gameModel.rowBlank][gameModel.colBlank-1].setClickable(true);
         }
-        if(gameModel.colBlank+1 != 4){
+        if(gameModel.rowBlank+1 != gameModel.getRowSize()){
+            buttons[gameModel.rowBlank+1][gameModel.colBlank].setClickable(true);
+        }
+        if(gameModel.colBlank+1 != gameModel.getColSize()){
             buttons[gameModel.rowBlank][gameModel.colBlank+1].setClickable(true);
         }
 
         int count =1; //int to keep count
-        for(int i = 0; i < 4; i++){
-            for(int j = 0; j < 4; j++){
+        for(int i = 0; i < gameModel.getRowSize(); i++){
+            for(int j = 0; j < gameModel.getColSize(); j++){
                 //Go through the board
                 //If the button is in the right place, set it to correct, otherwise it's incorrect
                 if(buttons[i][j].getText().equals(Integer.toString(count))){
@@ -115,9 +125,9 @@ public class GameView {
 
     //Sets onClickListeners to all buttons
     public void setOnClick(GameController game){
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < gameModel.maxRowSize; i++)
         {
-            for(int j = 0; j < 4; j++)
+            for(int j = 0; j < gameModel.maxColSize; j++)
             {
                 buttons[i][j].setOnClickListener(game);
             }
@@ -129,9 +139,9 @@ public class GameView {
     public void switchPos(Button b){
         int row =0;
         int col =0;
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < gameModel.getRowSize(); i++)
         {
-            for(int j = 0; j < 4; j++)
+            for(int j = 0; j < gameModel.getColSize(); j++)
             {
                 if(buttons[i][j].equals(b)){ //Check the entire board and store its row and col
                     row = i;
@@ -146,6 +156,19 @@ public class GameView {
         gameModel.setColBlank(col);
         updateBoard(); //Update the board
     }
-
+    /*Function to change the size of the board (4x4 to 9x9)*/
+    public void changeSize(){
+        for(int i = 0; i < gameModel.maxRowSize; i++){
+            for(int j = 0; j < gameModel.maxColSize; j++) {
+                buttons[i][j].setVisibility(View.GONE); //Make all buttons go away
+            }
+        }
+        for(int i = 0; i < gameModel.getRowSize(); i++){
+            for(int j = 0; j < gameModel.getColSize(); j++){
+                buttons[i][j].setVisibility(View.VISIBLE); //Make the buttons of desired size visible
+            }
+        }
+        shuffleBoard(); //Give the buttons new values
+    }
 
 }
